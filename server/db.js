@@ -1,4 +1,4 @@
-const Pool = require("pg").Pool
+const { Pool } = require("pg")
 
 const pool = new Pool({
   user: "development",
@@ -8,4 +8,6 @@ const pool = new Pool({
   database: "gottago"
 });
 
-module.exports = pool;
+module.exports = {
+  query: (text, params) => pool.query(text, params),
+}
