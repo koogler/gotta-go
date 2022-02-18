@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 
 import LocationList from '../LocationList/LocationsList';
-
+import MapElement from '../Map/Map';
 
 function App() {
 
@@ -17,6 +17,7 @@ function App() {
     <div>
       <h1>Homepage</h1>
       <LocationList />
+      <MapElement />
     </div >
 
   );
