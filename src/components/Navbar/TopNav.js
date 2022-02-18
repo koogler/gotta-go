@@ -9,6 +9,8 @@ function TopNav() {
         <Navbar.Brand href="/">Navbar</Navbar.Brand>
         <Nav className="me-auto">
           <Link to="/dashboard">Dashboard</Link>
+        </Nav>
+        <Nav>
           <Link to="/locationadd">Add a new location!</Link>
         </Nav>
       </Container>

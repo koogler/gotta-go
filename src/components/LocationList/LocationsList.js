@@ -6,7 +6,9 @@ import { LocationsContext } from "../../context/LocationsContext";
 const LocationList = () => {
 
   const { locations, setLocations } = useContext(LocationsContext)
+
   let navigate = useNavigate()
+
   useEffect(() => {
     const fetchData = async () => {
       try {
