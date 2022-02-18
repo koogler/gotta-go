@@ -56,10 +56,8 @@ const LocationAdd = () => {
           privacy_rating: privacyRating
         })
       addLocations(res.data.data.location)
+      navigate('')
     } catch (err) { }
-
-    setTimeout(() => { navigate(`/`) }, 1000)
-
   }
 
   return (

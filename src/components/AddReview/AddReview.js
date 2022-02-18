@@ -1,9 +1,25 @@
 import { useState } from "react";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
+import LocationFind from "../../api/LocationFind";
 
 const AddReview = () => {
 
+  const { id } = useParams()
+  const navigate = useNavigate()
+  const location = useLocation()
+
   const [reviewBody, setReviewBody] = useState("")
   const [privacyRating, setPrivacyRating] = useState(0)
+
+  const handleSubmitReview = async (event) => {
+    event.preventDefault()
+    const res = await LocationFind.post(`locations/${id}/addreview`, {
+      review_body: reviewBody,
+      privacy_rating: privacyRating
+    })
+    navigate('/')
+    navigate(``)
+  }
 
   return (
     <div>
@@ -39,7 +55,7 @@ const AddReview = () => {
             </select>
           </div>
 
-          <button className="btn btn-primary">Submit</button>
+          <button className="btn btn-primary" onClick={handleSubmitReview}>Submit</button>
 
         </div>
       </form>

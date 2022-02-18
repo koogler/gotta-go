@@ -26,13 +26,6 @@ const LocationList = () => {
   return (
     <div>
       <table>
-        <thead>
-          <tr>
-            <th>
-              Your nearby porcelain thrones:
-            </th>
-          </tr>
-        </thead>
         <tbody>
           {locations && locations.map((location) => {
             return (
@@ -43,10 +36,10 @@ const LocationList = () => {
                 <td>{location.longitude}</td>
                 <td>{location.open_time}</td>
                 <td>{location.close_time}</td>
-                <td>{location.accessible}</td>
-                <td>{location.changing_table}</td>
-                <td>{location.sharps_disposal}</td>
-                <td>{location.requires_purchase}</td>
+                <td>Is it wheelchair accessible?{'✅ '.repeat(location.accessible)}</td>
+                <td>Available changing table?{'✅ '.repeat(location.changing_table)}</td>
+                <td>Has sharp item disposal?{'✅ '.repeat(location.sharps_disposal)}</td>
+                <td>Requires purchase before using bathroom?{'✅ '.repeat(location.requires_purchase)}</td>
                 <td>{location.privacy_rating}</td>
               </tr>
             )

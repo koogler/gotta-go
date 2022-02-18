@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 
 import LocationList from '../LocationList/LocationsList';
-import { Navbar } from 'react-bootstrap';
 
 
 function App() {
@@ -17,8 +16,6 @@ function App() {
 
     <div>
       <h1>Homepage</h1>
-      <Link to="/dashboard">dashboard</Link> |{" "}
-      <Link to="/locationadd">add a location</Link>
       <LocationList />
     </div >
 

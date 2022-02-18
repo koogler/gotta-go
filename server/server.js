@@ -43,9 +43,20 @@ app.post('/locations', async (req, res) => {
   const results = await db.query(
     "INSERT INTO locations (name, address, latitude, longitude, open_time, close_time, accessible, changing_table, sharps_disposal, requires_purchase, privacy_rating) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11) RETURNING *",
     [req.body.name, req.body.address, req.body.latitude, req.body.longitude, req.body.open_time, req.body.close_time, req.body.accessible, req.body.changing_table, req.body.sharps_disposal, req.body.requires_purchase, req.body.privacy_rating])
-  res.status(200).json({
+  res.status(201).json({
     status: "it went through",
     data: { locations: results.rows[0] }
+  })
+})
+
+app.post('/locations/:id/addreview', async (req, res) => {
+
+  const results = await db.query(
+    "INSERT INTO reviews (location_id, review_body, privacy_rating) VALUES ($1,$2,$3) RETURNING *", [req.params.id, req.body.review_body, req.body.privacy_rating])
+
+  res.status(201).json({
+    status: "it went through",
+    data: { review: results.rows[0] }
   })
 })
 
