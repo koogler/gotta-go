@@ -9,7 +9,7 @@ import {
   Route
 } from "react-router-dom";
 import Dashboard from './components/Dashboard/Dashboard';
-import Preferences from './components/Preferences/Preferences';
+import LocationAdd from "./components/LocationAdd/LocationAdd"
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
@@ -17,7 +17,8 @@ ReactDOM.render(
     <Routes>
       <Route path="/" element={<App />}>
         <Route path="Dashboard" element={<Dashboard />} />
-        <Route path="Preferences" element={<Preferences />} />
+        <Route path="Locationadd" element={<LocationAdd />} />
+        <Route path="Locationdetail" element={<LocationDetail />} />
       </Route>
     </Routes>
   </BrowserRouter>,

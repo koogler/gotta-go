@@ -1,11 +1,12 @@
 import React, { useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom"
 import LocationFind from "../../api/LocationFind";
 import { LocationsContext } from "../../context/LocationsContext";
 
 const LocationList = () => {
 
   const { locations, setLocations } = useContext(LocationsContext)
-
+  let navigate = useNavigate()
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -15,6 +16,10 @@ const LocationList = () => {
     }
     fetchData()
   }, [])
+
+  const handleLocationSelect = (id) => {
+    navigate(`/locations/${id}`)
+  }
 
   return (
     <div>
@@ -29,7 +34,7 @@ const LocationList = () => {
         <tbody>
           {locations && locations.map((location) => {
             return (
-              <tr key={location.id}>
+              <tr onClick={() => handleLocationSelect(location.id)} key={location.id}>
                 <td>{location.name}</td>
                 <td>{location.address}</td>
                 <td>{location.latitude}</td>
