@@ -1,9 +1,11 @@
 const express = require('express');
 const morgan = require('morgan')
+const cors = require('cors')
 const app = express();
 const db = require("./db.js");
 
 app.use(morgan("dev"))
+app.use(cors())
 app.use(express.json())
 
 app.use('/login', (req, res) => {
@@ -15,7 +17,6 @@ app.use('/login', (req, res) => {
 //fetch ALL locations
 app.get('/locations', async (req, res) => {
   const results = await db.query(`SELECT * FROM locations`)
-  console.log(results.rows)
   res.status(200).json({
     status: "it went through",
     data: { locations: results.rows }
