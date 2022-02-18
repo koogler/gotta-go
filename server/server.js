@@ -27,9 +27,12 @@ app.get('/locations', async (req, res) => {
 //fetch SINGLE location
 app.get('/locations/:id', async (req, res) => {
   const results = await db.query("SELECT * FROM locations WHERE id = $1", [req.params.id])
+
+  const reviewResults = await db.query("SELECT * FROM reviews WHERE location_id = $1", [req.params.id])
+
   res.status(200).json({
     status: "it went through",
-    data: { locations: results.rows[0] }
+    data: { locations: results.rows[0], reviews: reviewResults.rows }
   })
 })
 

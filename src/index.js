@@ -9,11 +9,14 @@ import Dashboard from './components/Dashboard/Dashboard'
 import LocationAdd from './components/LocationAdd/LocationAdd'
 import LocationDetail from './components/LocationDetail/LocationDetail'
 import { LocationsContextProvider } from './context/LocationsContext.js'
+import TopNav from './components/Navbar/TopNav'
 
 
 ReactDOM.render(
   <LocationsContextProvider>
+
     <BrowserRouter>
+      <TopNav />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/dashboard" element={<Dashboard />} />

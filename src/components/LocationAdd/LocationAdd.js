@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import LocationFind from "../../api/LocationFind";
 import { LocationsContext } from "../../context/LocationsContext";
 
@@ -34,6 +35,8 @@ const LocationAdd = () => {
     setRequiresPurchase(!requiresPurchase)
   }
 
+  const navigate = useNavigate()
+
   const handleSubmit = async (event) => {
     event.preventDefault()
 
@@ -54,6 +57,8 @@ const LocationAdd = () => {
         })
       addLocations(res.data.data.location)
     } catch (err) { }
+
+    setTimeout(() => { navigate(`/`) }, 1000)
 
   }
 
