@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import LocationFind from "../../api/LocationFind";
 import { LocationsContext } from "../../context/LocationsContext";
 
+import './LocationAdd.scss'; 
+
 const LocationAdd = () => {
 
   const { addLocations } = useContext(LocationsContext)
@@ -70,7 +72,7 @@ const LocationAdd = () => {
               onChange={event => setName(event.target.value)}
               type="text"
               className="form-control"
-              placeholder="Location Name" />
+              placeholder="Location Name" /> 
           </div>
 
           <div className="col">
@@ -124,7 +126,7 @@ const LocationAdd = () => {
               value={accessible}
               onChange={handleChangeOne}
               type="checkbox" />
-          </div>
+          </div>    
 
           <div className="col">
             <p>Is there a changing station?</p>
@@ -132,7 +134,7 @@ const LocationAdd = () => {
               value={changingTable}
               onChange={handleChangeTwo}
               type="checkbox" />
-          </div>
+          </div>        
 
           <div className="col">
             <p>Is there a sharps disposal?</p>
@@ -140,7 +142,7 @@ const LocationAdd = () => {
               value={sharpsDisposal}
               onChange={handleChangeThree}
               type="checkbox" />
-          </div>
+          </div>   
 
           <div className="col">
             <p>Is a purchase required?</p>
@@ -148,7 +150,6 @@ const LocationAdd = () => {
               value={requiresPurchase}
               onChange={handleChangeFour}
               type="checkbox" />
-
           </div>
 
           <div className="col">
@@ -160,7 +161,7 @@ const LocationAdd = () => {
               placeholder="Privacy Rating(1-5)" />
           </div>
 
-          <button onClick={handleSubmit} type="submit" className="btn btn-primary">Add a new location!</button>
+          <button onClick={handleSubmit} type="submit" className="button">Add a new location!</button>
         </div>
       </form>
     </div>
