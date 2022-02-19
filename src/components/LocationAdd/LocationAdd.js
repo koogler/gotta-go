@@ -127,7 +127,7 @@ const LocationAdd = () => {
           </div>
 
           <div className="col">
-            <p>Is there a changing table?</p>
+            <p>Is there a changing station?</p>
             <input
               value={changingTable}
               onChange={handleChangeTwo}
@@ -135,7 +135,7 @@ const LocationAdd = () => {
           </div>
 
           <div className="col">
-            <p>Is there a sharp object disposal?</p>
+            <p>Is there a sharps disposal?</p>
             <input
               value={sharpsDisposal}
               onChange={handleChangeThree}
