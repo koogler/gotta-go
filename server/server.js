@@ -60,5 +60,19 @@ app.post('/locations/:id/addreview', async (req, res) => {
   })
 })
 
+//delete location
+
+app.delete('/locations/:id', async (req, res) => {
+  const results = await db.query("DELETE FROM locations WHERE id = $1", [req.params.id])
+
+  const reviewResults = await db.query("DELETE FROM reviews WHERE location_id = $1", [req.params.id])
+
+  res.status(200).json({
+    status: "delete succesful",
+    data: { locations: results.rows[0] }
+  })
+})
+
+
 
 app.listen(8080, () => console.log('API is running on http://localhost:8080/login'));
