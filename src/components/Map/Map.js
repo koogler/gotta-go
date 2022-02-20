@@ -10,8 +10,8 @@ const libraries = ["places"]
 
 // sets default style values
 const mapContainerStyle = {
-  width: '100vw',
-  height: "100vh",
+  width: '76vw',
+  height: "91vh",
 }
 // sets center point (currently at union station)
 const center = {
