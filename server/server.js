@@ -8,12 +8,6 @@ app.use(morgan("dev"))
 app.use(cors())
 app.use(express.json())
 
-app.use('/login', (req, res) => {
-  res.send({
-    token: 'test123'
-  });
-});
-
 //fetch ALL locations
 app.get('/locations', async (req, res) => {
   const results = await db.query(`SELECT * FROM locations`)
@@ -60,5 +54,29 @@ app.post('/locations/:id/addreview', async (req, res) => {
   })
 })
 
+//fetch users
 
-app.listen(8080, () => console.log('API is running on http://localhost:8080/login'));
+app.get('/userdata', async (req, res) => {
+  const results = await db.query(`SELECT * FROM users`)
+  res.status(200).json({
+    status: "it went through",
+    data: { users: results.rows }
+  })
+})
+
+//create user
+
+app.get('/userdata/adduser', async (req, res) => {
+  const results = await db.query(
+    "INSERT INTO users (username, password) VALUES ($1, $2) RETURNING*", [req.body.username, req.body.password])
+  res.status(201).json({
+    status: "it went through",
+    data: { review: results.rows[0] }
+  })
+
+})
+
+
+
+
+app.listen(8080, () => console.log('API is running on http://localhost:8080/'));

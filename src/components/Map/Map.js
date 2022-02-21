@@ -24,7 +24,7 @@ const options = {
 
 
 const MapElement = () => {
-  const {isLoaded, loadError} = useLoadScript({
+  const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries,
   });
@@ -34,11 +34,11 @@ const MapElement = () => {
 
   return (
     <div>
-      <GoogleMap 
-        mapContainerStyle={mapContainerStyle} 
-        zoom={14} 
+      <GoogleMap
+        mapContainerStyle={mapContainerStyle}
+        zoom={14}
         center={center}
-        >
+      >
       </GoogleMap>
     </div>
   );
