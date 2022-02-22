@@ -161,7 +161,7 @@ const LocationAdd = () => {
               placeholder="Privacy Rating(1-5)" />
           </div>
 
-          <button onClick={handleSubmit} type="submit" className="button">Add a new location!</button>
+          <button onClick={handleSubmit} type="submit" className="button">Add!</button>
         </div>
       </form>
     </div>

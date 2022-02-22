@@ -5,6 +5,8 @@ import { LocationsContext } from "../../context/LocationsContext";
 import AddReview from "../AddReview/AddReview";
 import LocationReviews from "../LocationReviews/LocationReviews";
 
+import "./LocationDetail.scss"
+
 const LocationDetail = () => {
 
   const { id } = useParams()
@@ -23,13 +25,13 @@ const LocationDetail = () => {
     <div>
       {selectedLocation && (
         <>
-          <h1>
+          <h1 className="location-name">
             {selectedLocation.locations.name}
           </h1>
-          <div>
+          <div className="reviews">
             <LocationReviews reviews={selectedLocation.reviews} />
           </div>
-          <AddReview />
+          <AddReview />  
         </>
       )}
     </div>

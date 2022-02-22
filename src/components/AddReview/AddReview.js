@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import LocationFind from "../../api/LocationFind";
 
+import "./AddReview.scss"
+
 const AddReview = () => {
 
   const { id } = useParams()
@@ -55,7 +57,7 @@ const AddReview = () => {
             </select>
           </div>
 
-          <button className="btn btn-primary" onClick={handleSubmitReview}>Submit</button>
+          <button className="button" onClick={handleSubmitReview}>Submit</button>
 
         </div>
       </form>
