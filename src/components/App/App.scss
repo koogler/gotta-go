@@ -18,13 +18,14 @@
 
   &__separator {
     width: 90%;
-    margin: 2rem 0;
+    margin: 1.5rem 0;
     border: solid 1px;
     color: darken(#fff, 5%);
   }
 
   &__menu {
     flex: 1;
+    overflow-y: scroll;
   }
 }
 

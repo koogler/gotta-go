@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom"
 import LocationFind from "../../api/LocationFind";
 import { LocationsContext } from "../../context/LocationsContext";
 
+import './LocationList.scss';
+
 const LocationList = () => {
 
   const { locations, setLocations } = useContext(LocationsContext)
@@ -29,18 +31,20 @@ const LocationList = () => {
         <tbody>
           {locations && locations.map((location) => {
             return (
-              <tr onClick={() => handleLocationSelect(location.id)} key={location.id}>
-                <td>{location.name}</td>
-                <td>{location.address}</td>
-                <td>{location.latitude}</td>
-                <td>{location.longitude}</td>
-                <td>{location.open_time}</td>
-                <td>{location.close_time}</td>
-                <td>Is it wheelchair accessible?{'✅ '.repeat(location.accessible)}</td>
-                <td>Available changing table?{'✅ '.repeat(location.changing_table)}</td>
-                <td>Has sharp item disposal?{'✅ '.repeat(location.sharps_disposal)}</td>
-                <td>Requires purchase before using bathroom?{'✅ '.repeat(location.requires_purchase)}</td>
-                <td>{location.privacy_rating}</td>
+              <tr onClick={() => handleLocationSelect(location.id)} key={location.id} className="location-list__item">
+                  
+                  <td className="title">{location.name}</td>
+                  <td>{location.address}</td>
+                  {/* <td>{location.latitude}</td>
+                  <td>{location.longitude}</td> */}
+                  <td>Opens: {location.open_time}</td>
+                  <td>Closes: {location.close_time}</td>
+                  {/* <td>Is it wheelchair accessible?{'✅ '.repeat(location.accessible)}</td>
+                  <td>Available changing table?{'✅ '.repeat(location.changing_table)}</td>
+                  <td>Has sharp item disposal?{'✅ '.repeat(location.sharps_disposal)}</td>
+                  <td>Requires purchase before using bathroom?{'✅ '.repeat(location.requires_purchase)}</td> */}
+                  <td>Rating: {location.privacy_rating}</td>
+        
               </tr>
             )
           })}

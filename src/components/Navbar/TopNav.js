@@ -6,7 +6,7 @@ function TopNav() {
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="/">Navbar</Navbar.Brand>
+        <Navbar.Brand href="/">Home</Navbar.Brand>
         <Nav className="me-auto">
           <Link to="/dashboard">Dashboard</Link>
         </Nav>
