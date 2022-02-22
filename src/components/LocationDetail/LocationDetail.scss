@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+.location-name {
+  background-color: white;
+  width: auto;
+  padding: 20px;
+  margin: 20px;
+  text-decoration: underline;
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+}
