@@ -25,6 +25,8 @@ const options = {
   zoomControl: true,
 }
 
+let date = new Date;
+
 function GeoLocate() {
   return <button>
 
@@ -89,10 +91,15 @@ const MapElement = () => {
               <h3>{selected.name}</h3>
               <hr />
               <p>{selected.address}<br />
+              {date.toLocaleTimeString('en-US', { hour12: false }) >= selected.open_time && date.toLocaleTimeString('en-US', { hour12: false }) <= selected.close_time 
+              ? "🟢 Open Now" 
+              : "❌ Currently Closed"
+              }
                 <hr />
-                Accessible: {selected.accessible}<br />
-                Changing Table: {selected.changing_table}<br />
-                Privacy Rating: {selected.privacy_rating} / 5</p>
+                Accessible: {selected.accessible ? "✅" : "❌"}<br />
+                Changing Table: {selected.changing_table ? "✅" : "❌"}<br />
+                Sharps Disposal: {selected.sharps_disposal ? "✅" : "❌"}<br />
+                Privacy Rating: {"⭐".repeat(selected.privacy_rating) + "★".repeat(5 - selected.privacy_rating)}</p>
             </div>
           </InfoWindow>) : null}
 
