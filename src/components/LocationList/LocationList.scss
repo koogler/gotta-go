@@ -1,0 +1,23 @@
+.location-list {
+  &__item {
+    
+    color: #98a9ba;
+    height: 10rem;
+    padding-left: 2rem;
+    padding-right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &:hover {
+      background-color: #ffffff;
+      cursor: pointer;
+      color: #222f3e;
+    }
+  }
+}
+
+.title {
+  text-decoration: underline;
+  font-weight: 600;  
+}
