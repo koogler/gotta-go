@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { LocationsContext } from '../../context/LocationsContext';
 import LocationFind from '../../api/LocationFind';
 import { Link } from 'react-router-dom'
+import useToken from '../Dashboard/useToken'
 
 async function loginUser(credentials) {
   return fetch('http://localhost:8080/login', {
@@ -17,7 +18,7 @@ async function loginUser(credentials) {
 }
 
 
-export default function Login({ setToken }) {
+export default function Login() {
 
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -41,6 +42,8 @@ export default function Login({ setToken }) {
     uname: "invalid username",
     pass: "invalid password"
   };
+
+  const { token, setToken } = useToken();
 
   const handleSubmit = async (event) => {
 
@@ -77,6 +80,7 @@ export default function Login({ setToken }) {
   const renderForm = (
     <div className="form-container">
       <form className="form" onSubmit={handleSubmit}>
+
         <div className="input-container">
           <label>Username </label>
           <input className="form--input" type="text" name="uname" required />
@@ -91,6 +95,7 @@ export default function Login({ setToken }) {
           Login
         </button>
       </form>
+      <div><Link to="/register">Don't have an account? Click here to sign up.</Link></div>
     </div>
   );
 
@@ -98,8 +103,10 @@ export default function Login({ setToken }) {
     <div className="app">
       <div className="login-form">
         <div className="title">Sign In</div>
-        <div><Link to="/register">Don't have an account? Click here to sign up.</Link></div>
-        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+        {isSubmitted ? <div>
+          <div className='user-info'>User is successfully logged in</div>
+          <a className='user-info' href='/'>Click here to return to the home page.</a>
+        </div> : renderForm}
       </div>
     </div>
   );
