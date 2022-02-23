@@ -32,7 +32,7 @@ app.get('/locations/:id', async (req, res) => {
 
 //create location
 
-app.post('/locations', async (req, res) => {
+app.post('/', async (req, res) => {
 
   const results = await db.query(
     "INSERT INTO locations (name, address, latitude, longitude, open_time, close_time, accessible, changing_table, sharps_disposal, requires_purchase, privacy_rating) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11) RETURNING *",

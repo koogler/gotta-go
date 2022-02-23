@@ -12,6 +12,7 @@ import { LocationsContextProvider } from './context/LocationsContext.js'
 import TopNav from './components/Navbar/TopNav'
 import Login from './components/Login/Login'
 import Register from './components/Register/Register'
+import Middle from './components/Middle/Middle'
 
 
 ReactDOM.render(
@@ -25,6 +26,7 @@ ReactDOM.render(
         <Route exact path="/locations/:id" element={<LocationDetail />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
+        <Route exact path='/middle' element={<Middle />} />
       </Routes>
     </BrowserRouter>
   </LocationsContextProvider >

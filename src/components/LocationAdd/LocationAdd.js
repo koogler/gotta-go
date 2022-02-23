@@ -47,7 +47,7 @@ const LocationAdd = () => {
     event.preventDefault()
 
     try {
-      const res = await LocationFind.post("/locations",
+      const res = await LocationFind.post("/",
         {
           name,
           address,
@@ -62,10 +62,10 @@ const LocationAdd = () => {
           privacy_rating: privacyRating
         })
       addLocations(res.data.data.location)
-      setTimeout(() => {
-        navigate('/')
-      }, 1000)
-    } catch (err) { }
+      navigate('/middle')
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   if (!token) {
@@ -189,7 +189,7 @@ const LocationAdd = () => {
               value={privacyRating}
               onChange={(event) => setPrivacyRating(event.target.value)}
             >
-              <option disabled>Rating</option>
+              <option defaultValue={'1'}>Rating</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>

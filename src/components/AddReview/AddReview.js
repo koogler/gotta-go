@@ -2,8 +2,6 @@ import { useState } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import LocationFind from "../../api/LocationFind";
 
-import "./AddReview.scss"
-
 const AddReview = () => {
 
   const { id } = useParams()
@@ -48,7 +46,7 @@ const AddReview = () => {
               value={privacyRating}
               onChange={(event) => setPrivacyRating(event.target.value)}
             >
-              <option disabled>Rating</option>
+              <option selected="selected">Rating</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -57,7 +55,7 @@ const AddReview = () => {
             </select>
           </div>
 
-          <button className="button" onClick={handleSubmitReview}>Submit</button>
+          <button className="btn btn-primary" onClick={handleSubmitReview}>Submit</button>
 
         </div>
       </form>
