@@ -40,6 +40,31 @@
 }
 }
 
+.geolocate {
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  z-index: 10;
+  width: auto;
+  padding: 10px 20px ;
+  border-radius: 30px;
+  margin: 10px;
+  color: white;
+  background-color: #222f3e;
+  border: none; 
+  font-weight: 600;  
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #d74c4e;
+    color: white;  
+  }
+
+}
+
 .map {
   display: flex;
   flex-direction: column;
