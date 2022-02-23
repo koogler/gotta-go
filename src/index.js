@@ -13,6 +13,7 @@ import TopNav from './components/Navbar/TopNav'
 import Login from './components/Login/Login'
 import Register from './components/Register/Register'
 import Middle from './components/Middle/Middle'
+import Logout from './components/Logout/Logout'
 
 
 ReactDOM.render(
@@ -27,6 +28,7 @@ ReactDOM.render(
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path='/middle' element={<Middle />} />
+        <Route exact path='/logout' element={<Logout />} />
       </Routes>
     </BrowserRouter>
   </LocationsContextProvider >
