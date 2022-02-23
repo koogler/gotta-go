@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+.checkbox {
+  // display: flex;
+  // flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.checkbox-element {
+  display: flex;
+  margin-bottom: 20px;
+  align-items:flex-start;
+}
+
+.box-element {
+  margin-right: 10px;
+}

@@ -9,10 +9,11 @@ const LocationReviews = ({ reviews }) => {
     <div className="row">
       {reviews.map((review) => {
         return (
-          <div key={review.id} className="card text-white bg-primary mb-3 mr-4" style={{ maxWidth: "40%" }}>
-            <div className="card-header d-flex justify-content-between">
+          <div key={review.id} className="card" style={{ maxWidth: "40%" }}>
+            <div className="card-header">
               <span>{review.review_body}</span>
-              <span>{review.privacy_rating}</span>
+              <br/>
+              <span className="rating">{review.privacy_rating}</span>
             </div>
           </div>
         )
@@ -24,3 +25,8 @@ const LocationReviews = ({ reviews }) => {
 }
 
 export default LocationReviews
+
+
+
+// className="card text-white bg-primary mb-3 mr-4"
+// className="card-header d-flex justify-content-between"

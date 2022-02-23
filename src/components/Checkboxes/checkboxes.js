@@ -2,6 +2,8 @@ import React, { useEffect, useState, useContext } from "react";
 import LocationFind from "../../api/LocationFind";
 import { LocationsContext } from "../../context/LocationsContext";
 
+import "./checkboxes.scss"
+
 // actual checkbox component
 const Checkboxes = () => {
 
@@ -118,15 +120,22 @@ const Checkboxes = () => {
     <div className="checkbox"> {
       checked.map(checkbox => {
         return (
-          <label>
-            {
-              checkbox.name
-            }
-            <input type="checkbox"
-              onChange={() => handleChange({ ...checkbox, checked: !checkbox.checked })}
-            />
-            <br />
-          </label>
+          <div className="checkbox-element">
+            <label>
+              {/* {
+                checkbox.name
+              } */}
+              <input type="checkbox"
+                className="box-element"
+                onChange={() => handleChange({ ...checkbox, checked: !checkbox.checked })}
+              />
+              {
+                checkbox.name
+              }
+              <br />
+            </label>
+            <br/>
+          </div>
         )
       })
     }
