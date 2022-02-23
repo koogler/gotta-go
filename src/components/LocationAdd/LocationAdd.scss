@@ -12,6 +12,17 @@ form {
   align-items: center;
 }
 
+.locationAdd--title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;  
+  margin-top: 50px;
+  z-index: -1;
+  position: relative;
+}
+
 .form-row {
   background-color: white;
   padding: 50px;

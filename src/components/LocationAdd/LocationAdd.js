@@ -74,67 +74,81 @@ const LocationAdd = () => {
 
   return (
     <div>
-      <div className="login-form">
-        <div className="title">Add to our ever expanding database!</div>
+      <div className="locationAdd--title">
+        Add to our ever expanding database!
       </div>
+      <br />
+
       <form>
         <div className="form-row">
           <div className="col">
-            <input
-              value={name}
-              onChange={event => setName(event.target.value)}
-              type="text"
-              className="form-control"
-              placeholder="Location Name" />
+            <label>Name
+              <input
+                value={name}
+                onChange={event => setName(event.target.value)}
+                type="text"
+                className="form-control"
+                placeholder="Location Name" />
+            </label>
           </div>
 
           <div className="col">
-            <input
-              value={address}
-              onChange={event => setAddress(event.target.value)}
-              type="text"
-              className="form-control"
-              placeholder="Address" />
+            <label>Address
+              <input
+                value={address}
+                onChange={event => setAddress(event.target.value)}
+                type="text"
+                className="form-control"
+                placeholder="Address" />
+            </label>
           </div>
 
           <div className="col">
-            <input
-              value={latitude}
-              onChange={event => setLatitude(event.target.value)}
-              type="float"
-              className="form-control"
-              placeholder="Latitude" />
+            <label>Latitude
+              <input
+                value={latitude}
+                onChange={event => setLatitude(event.target.value)}
+                type="float"
+                className="form-control"
+                placeholder="Latitude" />
+            </label>
           </div>
 
           <div className="col">
-            <input
-              value={longitude}
-              onChange={event => setLongitude(event.target.value)}
-              type="float"
-              className="form-control"
-              placeholder="Longitude" />
+            <label>Longitude
+              <input
+                value={longitude}
+                onChange={event => setLongitude(event.target.value)}
+                type="float"
+                className="form-control"
+                placeholder="Longitude" />
+            </label>
           </div>
 
           <div className="col">
-            <input
-              value={openTime}
-              onChange={event => setOpenTime(event.target.value)}
-              type="time"
-              className="form-control"
-              placeholder="Opening Time" />
+            <label>Opening Time
+              <input
+                value={openTime}
+                onChange={event => setOpenTime(event.target.value)}
+                type="time"
+                className="form-control"
+                placeholder="Opening Time" />
+            </label>
           </div>
 
           <div className="col">
-            <input
-              value={closeTime}
-              onChange={event => setCloseTime(event.target.value)}
-              type="time"
-              className="form-control"
-              placeholder="Closing Time" />
+            <label>Closing Time
+              <input
+                value={closeTime}
+                onChange={event => setCloseTime(event.target.value)}
+                type="time"
+                className="form-control"
+                placeholder="Closing Time" />
+            </label>
           </div>
 
           <div className="col">
-            <p>Is the washroom handicapped friendly?</p>
+            <p>Is the washroom Accessible?</p>
             <input
               value={accessible}
               onChange={handleChangeOne}
@@ -166,6 +180,9 @@ const LocationAdd = () => {
           </div>
 
           <div className="col">
+            <label htmlFor="rating">Please Provide a Rating:</label>
+            <br />
+
             <select
               id="rating"
               className="custom-select"
@@ -179,6 +196,7 @@ const LocationAdd = () => {
               <option value="4">4</option>
               <option value="5">5</option>
             </select>
+
           </div>
 
           <button onClick={handleSubmit} type="submit" className="button">Add!</button>
