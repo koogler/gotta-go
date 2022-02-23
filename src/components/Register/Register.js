@@ -3,6 +3,8 @@ import { LocationsContext } from '../../context/LocationsContext';
 import LocationFind from '../../api/LocationFind';
 import { useNavigate, Link } from "react-router-dom";
 
+import "./Register.scss"
+
 export default function Register() {
 
   const { addUsers } = useContext(LocationsContext)
