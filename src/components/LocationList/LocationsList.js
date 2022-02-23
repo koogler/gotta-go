@@ -56,7 +56,7 @@ const LocationList = () => {
             return (
               <tr onClick={() => handleLocationSelect(location.id)} key={location.id} className="location-list__item">
 
-                <td className="title">{location.name}</td>
+                <td>{location.name}</td>
                 <td>{location.address}</td>
                 {/* <td>{location.latitude}</td>
                   <td>{location.longitude}</td> */}
