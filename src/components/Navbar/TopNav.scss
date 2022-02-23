@@ -1,0 +1,33 @@
+.click {
+  width: auto;
+  padding: 10px 20px ;
+  border-radius: 30px;
+  margin: 10px;
+  color: white;
+  background-color: #57AA8C;
+  border: none; 
+  font-weight: 600;  
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.click:hover {
+  background-color: #d74c4e;
+  color: white;
+}
+
+.home {
+  border: 1px;
+  border-color: white;
+  border-style: solid;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.header {
+  position:sticky;
+  width: 100%;
+  top: 0;
+  z-index: 3;
+}
