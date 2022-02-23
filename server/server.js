@@ -80,9 +80,10 @@ app.get('/userdata', async (req, res) => {
 
 //create user
 
-app.get('/userdata/adduser', async (req, res) => {
+app.post('/userdata/adduser', async (req, res) => {
   const results = await db.query(
     "INSERT INTO users (username, password) VALUES ($1, $2) RETURNING*", [req.body.username, req.body.password])
+
   res.status(201).json({
     status: "it went through",
     data: { review: results.rows[0] }
@@ -90,7 +91,11 @@ app.get('/userdata/adduser', async (req, res) => {
 
 })
 
-
+app.use('/login', (req, res) => {
+  res.send({
+    token: 'test123'
+  });
+});
 
 
 app.listen(8080, () => console.log('API is running on http://localhost:8080/'));

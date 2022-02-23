@@ -2,8 +2,10 @@ import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import LocationFind from "../../api/LocationFind";
 import { LocationsContext } from "../../context/LocationsContext";
+import useToken from "../Dashboard/useToken";
+import Login from "../Login/Login";
 
-import './LocationAdd.scss'; 
+import './LocationAdd.scss';
 
 const LocationAdd = () => {
 
@@ -20,6 +22,8 @@ const LocationAdd = () => {
   const [sharpsDisposal, setSharpsDisposal] = useState(false)
   const [requiresPurchase, setRequiresPurchase] = useState(false)
   const [privacyRating, setPrivacyRating] = useState(0)
+
+  const { token, setToken } = useToken();
 
   const handleChangeOne = () => {
     setAccessible(!accessible)
@@ -62,6 +66,10 @@ const LocationAdd = () => {
     } catch (err) { }
   }
 
+  if (!token) {
+    return <Login setToken={setToken} />
+  }
+
   return (
     <div>
       <form>
@@ -72,7 +80,7 @@ const LocationAdd = () => {
               onChange={event => setName(event.target.value)}
               type="text"
               className="form-control"
-              placeholder="Location Name" /> 
+              placeholder="Location Name" />
           </div>
 
           <div className="col">
@@ -126,7 +134,7 @@ const LocationAdd = () => {
               value={accessible}
               onChange={handleChangeOne}
               type="checkbox" />
-          </div>    
+          </div>
 
           <div className="col">
             <p>Is there a changing station?</p>
@@ -134,7 +142,7 @@ const LocationAdd = () => {
               value={changingTable}
               onChange={handleChangeTwo}
               type="checkbox" />
-          </div>        
+          </div>
 
           <div className="col">
             <p>Is there a sharps disposal?</p>
@@ -142,7 +150,7 @@ const LocationAdd = () => {
               value={sharpsDisposal}
               onChange={handleChangeThree}
               type="checkbox" />
-          </div>   
+          </div>
 
           <div className="col">
             <p>Is a purchase required?</p>

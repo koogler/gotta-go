@@ -14,8 +14,12 @@ export const LocationsContextProvider = (props) => {
     setLocations([...locations, location])
   }
 
+  const addUsers = (user) => {
+    setDatabase([...database, user])
+  }
+
   return (
-    <LocationsContext.Provider value={{ locations, setLocations, addLocations, selectedLocation, setSelectedLocation, database, setDatabase }}>
+    <LocationsContext.Provider value={{ locations, setLocations, addLocations, selectedLocation, setSelectedLocation, database, setDatabase, addUsers }}>
       {props.children}
     </LocationsContext.Provider>
   )

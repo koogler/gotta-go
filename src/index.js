@@ -11,6 +11,7 @@ import LocationDetail from './components/LocationDetail/LocationDetail'
 import { LocationsContextProvider } from './context/LocationsContext.js'
 import TopNav from './components/Navbar/TopNav'
 import Login from './components/Login/Login'
+import Register from './components/Register/Register'
 
 
 ReactDOM.render(
@@ -20,10 +21,10 @@ ReactDOM.render(
       <TopNav />
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/locationadd" element={<LocationAdd />} />
         <Route exact path="/locations/:id" element={<LocationDetail />} />
         <Route exact path="/login" element={<Login />} />
+        <Route exact path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>
   </LocationsContextProvider >

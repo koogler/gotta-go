@@ -8,7 +8,6 @@ function TopNav() {
       <Container>
         <Navbar.Brand href="/">Home</Navbar.Brand>
         <Nav className="me-auto">
-          <Link to="/dashboard">Dashboard</Link>
         </Nav>
         <Nav>
           <Link to="/locationadd">Add a new location!</Link>
