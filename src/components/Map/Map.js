@@ -10,8 +10,8 @@ const libraries = ["places"]
 
 // sets default style values
 const mapContainerStyle = {
-  width: '80vw',
-  height: "92vh", //91vh
+  width: '100%',
+  height: "92vh",
 }
 // sets center point (currently at union station)
 const center = {
@@ -66,7 +66,7 @@ const MapElement = () => {
   if (!isLoaded) return "Loading...";
 
   return (
-    <div>
+    <div className="mapContainer">
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={14}
