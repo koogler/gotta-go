@@ -63,6 +63,9 @@ const MapElement = () => {
     lng: -79.38060752068597,
   });
 
+  // set geolocate button loading state
+  const [loading, setLoading] = useState(false)
+
   // checks for map load errors
   if (loadError) return "Error Loading Map";
   if (!isLoaded) return "Loading...";
@@ -113,7 +116,9 @@ const MapElement = () => {
 
         <button
           className="geolocate"
+          disabled={loading}
           onClick={() => {
+            setLoading(true)
             navigator.geolocation.getCurrentPosition(
               (position) => {
                 console.log(position);
@@ -121,6 +126,7 @@ const MapElement = () => {
                   lat: position.coords.latitude,
                   lng: position.coords.longitude,
                 });
+                setLoading(false)
               },
               () => null
             );
