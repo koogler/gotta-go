@@ -47,7 +47,9 @@ const MapElement = () => {
     const fetchData = async () => {
       try {
         const res = await LocationFind.get("/locations")
-        setLocations(res.data.data.locations)
+        let returnedLocations = res.data.data.locations
+        returnedLocations = returnedLocations.map((location) => {return {...location, visible: true}})
+        setLocations(returnedLocations)
       } catch (err) { }
     }
     fetchData()
@@ -72,7 +74,7 @@ const MapElement = () => {
         options={options}
       >
 
-        {locations.map((marker) =>
+        {locations.filter((location) => location.visible).map((marker) =>
           <Marker
             key={marker.id}
             position={{ lat: marker.latitude, lng: marker.longitude }}

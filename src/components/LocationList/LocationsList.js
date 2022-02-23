@@ -15,7 +15,9 @@ const LocationList = () => {
     const fetchData = async () => {
       try {
         const res = await LocationFind.get("/locations")
-        setLocations(res.data.data.locations)
+        let returnedLocations = res.data.data.locations
+        returnedLocations = returnedLocations.map((location) => {return {...location, visible: true}})
+        setLocations(returnedLocations)
       } catch (err) { }
     }
     fetchData()
@@ -29,7 +31,7 @@ const LocationList = () => {
     <div>
       <table>
         <tbody>
-          {locations && locations.map((location) => {
+          {locations && locations.filter((location) => location.visible).map((location) => {
             return (
               <tr onClick={() => handleLocationSelect(location.id)} key={location.id} className="location-list__item">
                   
