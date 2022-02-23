@@ -62,7 +62,9 @@ const LocationAdd = () => {
           privacy_rating: privacyRating
         })
       addLocations(res.data.data.location)
-      navigate('')
+      setTimeout(() => {
+        navigate('/')
+      }, 1000)
     } catch (err) { }
   }
 
@@ -72,6 +74,9 @@ const LocationAdd = () => {
 
   return (
     <div>
+      <div className="login-form">
+        <div className="title">Add to our ever expanding database!</div>
+      </div>
       <form>
         <div className="form-row">
           <div className="col">
@@ -161,12 +166,19 @@ const LocationAdd = () => {
           </div>
 
           <div className="col">
-            <input
+            <select
+              id="rating"
+              className="custom-select"
               value={privacyRating}
-              onChange={event => setPrivacyRating(event.target.value)}
-              type="number"
-              className="form-control"
-              placeholder="Privacy Rating(1-5)" />
+              onChange={(event) => setPrivacyRating(event.target.value)}
+            >
+              <option disabled>Rating</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
           </div>
 
           <button onClick={handleSubmit} type="submit" className="button">Add!</button>
