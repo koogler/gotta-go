@@ -9,11 +9,11 @@ const LocationReviews = ({ reviews }) => {
     <div className="row">
       {reviews.map((review) => {
         return (
-          <div key={review.id} className="card" style={{ maxWidth: "40%" }}>
-            <div className="card-header">
-              <span>{review.review_body}</span>
+          <div key={review.id} className="card" style={{ maxWidth: "100%" }}>
+            <div>
+              <span className="card-header">{review.review_body}</span>
               <br/>
-              <span className="rating">{review.privacy_rating}</span>
+              <span className="rating">⭐ {review.privacy_rating}</span>
             </div>
           </div>
         )
