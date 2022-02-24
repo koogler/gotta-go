@@ -22,7 +22,7 @@ const AddReview = () => {
   }
 
   return (
-    <div>
+    // <div classname="form--container">
       <form>
         <div className="form-row">
 
@@ -59,7 +59,7 @@ const AddReview = () => {
 
         </div>
       </form>
-    </div>
+    // </div>
   )
 }
 

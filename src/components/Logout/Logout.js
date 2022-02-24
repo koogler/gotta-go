@@ -13,8 +13,8 @@ export default function Logout() {
   return (
     <div className="app">
       <div className="login-form">
-        <div className="title">Your are now logged out.</div>
-        <a href="/">Return to main page.</a>
+        <div className="logout--title">You are now logged out.</div>
+        <a href="/">Click Here to Return to the Map</a>
       </div>
     </div>
   )

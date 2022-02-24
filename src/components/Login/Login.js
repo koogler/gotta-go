@@ -104,7 +104,7 @@ export default function Login() {
       <div className="login-form">
         <div className="title">Sign In</div>
         {isSubmitted ? <div>
-          <div className='user-info'>User is successfully logged in</div>
+          <div className='user-info--signed-in'>User is successfully logged in</div>
           <a className='user-info' href='/'>Click here to return to the home page.</a>
         </div> : renderForm}
       </div>

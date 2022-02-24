@@ -2,20 +2,41 @@
   box-sizing: border-box;
 }
 
-.location-name {
-  background-color: white;
+.location-detail-container {
+  width: 100vw
+}
+
+.location--name {
+  color: white;
   width: auto;
-  padding: 20px;
-  margin: 20px;
-  text-decoration: underline;
-
-
+  padding: 10px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.reviews {
+.location--address {
+  color: white;
+  width: auto;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.location-value {
+  color: white;
+  width: auto;
+  margin: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.reviews--box {
   display: flex;
   flex-direction: column;
   align-items: center;
