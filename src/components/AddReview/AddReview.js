@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import LocationFind from "../../api/LocationFind";
 
+import "./AddReview.scss"
+
 const AddReview = () => {
 
   const { id } = useParams()
@@ -26,8 +28,8 @@ const AddReview = () => {
       <form>
         <div className="form-row">
 
-          <div className="form-group col-8">
-            <label htmlFor="Review">Review</label>
+          <div className="form-group">
+            <label className="review-tag" htmlFor="Review">Review</label>
             <textarea
               id="Review"
               placeholder="Give us your thoughts!"
@@ -38,8 +40,8 @@ const AddReview = () => {
             />
           </div>
 
-          <div className="form-group col-4">
-            <label htmlFor="rating">Rating</label>
+          <div className="form-group">
+            <label className="rating-tag" htmlFor="rating">Rating</label>
             <select
               id="rating"
               className="custom-select"
@@ -55,7 +57,7 @@ const AddReview = () => {
             </select>
           </div>
 
-          <button className="btn btn-primary" onClick={handleSubmitReview}>Submit</button>
+          <button className="button" onClick={handleSubmitReview}>Submit</button>
 
         </div>
       </form>
