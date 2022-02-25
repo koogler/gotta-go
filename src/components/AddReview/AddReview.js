@@ -34,7 +34,7 @@ const AddReview = () => {
               id="Review"
               placeholder="Give us your thoughts!"
               type="text"
-              className="form-review"
+              className="form-control"
               value={reviewBody}
               onChange={(event) => setReviewBody(event.target.value)}
             />
