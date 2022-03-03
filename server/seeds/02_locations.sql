@@ -12,7 +12,7 @@ INSERT INTO locations (
   requires_purchase, 
   privacy_rating)
 VALUES (
-  11,                                -- ID
+  1,                                -- ID
   'Union Station',                  -- name
   '55 Front St W, Toronto, ON',     -- address
   43.645221007945544,               -- latitude
@@ -39,7 +39,7 @@ INSERT INTO locations (
   requires_purchase, 
   privacy_rating)
 VALUES (
-  12,                                -- ID
+  2,                                -- ID
   'Starbucks',                      -- name
   '300 Front St W Unit 1, Toronto, ON', -- address
   43.64395638933979,                -- latitude
@@ -67,7 +67,7 @@ INSERT INTO locations (
   requires_purchase, 
   privacy_rating)
 VALUES (
-  13,                                -- ID
+  3,                                -- ID
   'Swatow',                         -- name
   '309 Spadina Ave., Toronto, ON',  -- address
   43.65383769170116,                -- latitude
@@ -94,7 +94,7 @@ INSERT INTO locations (
   requires_purchase, 
   privacy_rating)
 VALUES (
-  14,
+  4,
   'Bloor-Yonge Station',
   'Toronto, ON M4W 1J7',
   43.671396066948,
@@ -122,7 +122,7 @@ INSERT INTO locations (
   privacy_rating
 )
 VALUES (
-  15,
+  5,
   'Toronto City Hall',
   '100 Queen St. W, Toronto, ON',
   43.6534614460888,
@@ -150,7 +150,7 @@ INSERT INTO locations (
   privacy_rating
 )
 VALUES (
-  16,
+  6,
   'John Innes Community Recreation Centre',
   '150 Sherbourne St, Toronto, ON',
   43.6555270440275,
@@ -178,7 +178,7 @@ INSERT INTO locations (
   privacy_rating
 )
 VALUES (
-  17,
+  7,
   'Public Washroom by Centre Island Ferry',
   'Toronto, ON',
   43.6400981714474,
@@ -206,7 +206,7 @@ INSERT INTO locations (
   privacy_rating
 )
 VALUES (
-  18,
+  8,
   'LA Fitness',
   '1326 Brant St, Burlington ON',
   43.3453524964836,
@@ -234,7 +234,7 @@ INSERT INTO locations (
   privacy_rating
 )
 VALUES (
-  19,
+  9,
   'Esso',
   '1447 Lakeshore Road, Burlington, ON',
   43.3238723893277,
@@ -247,3 +247,5 @@ VALUES (
   true,
   1
 );
+
+ALTER SEQUENCE locations_id_seq RESTART WITH 10;

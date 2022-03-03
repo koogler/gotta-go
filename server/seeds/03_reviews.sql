@@ -7,10 +7,12 @@ INSERT INTO reviews (
   privacy_rating
 )
 VALUES (
-  75,  --id
+  1,  --id
   1,  --user_id
-  13,  --location_id
+  3,  --location_id
   '2022-02-14', --review_date
   'Down the stairs and not the cleanest', --review_body
   3 --privacy rating
 );
+
+ALTER SEQUENCE reviews_id_seq RESTART WITH 2;
