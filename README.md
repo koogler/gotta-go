@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# GottaGo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Built as a final group project for Lighthouse Labs' Full-Stack Web Development bootcamp, GottaGo is a quick and efficient application using the Google Maps API to display a list of nearby public washrooms based on an input geolocation with selection criteria.
 
-In the project directory, you can run:
+The application can display a list of restrooms and a number of desirable (or non-desirable) criteria, and allow for filtering options to help meet specific accessibility needs.
 
-### `npm start`
+All data rendered in this application (minus the initial supplied database seeds) is user-supplied.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This application uses the [@react-google-maps](https://react-google-maps-api-docs.netlify.app/) library, which is *awesome*!
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+- PostgreSQL
+- ExpressJS
+- React
+- NodeJS
+- Maps Javascript API (Google)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Some Notes:
 
-### `npm run build`
+This project was completed in under 2 weeks, and presented in the form shown on the Jan 24th commits. As with all tight deadlines, we delievered a MVP, but perhaps not the most watertight of MVPs. There are a number of small things we want to address (bug fixes, refactoring of some ugly bits), not to mention a number of features we want to add in the future. A short to-do list may look something like this:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Implement Places API to allow searching of locations, and Geocoding of addresses to add locations to database.
+- A User Dashboard to view submitted locations and reviews.
+- An Admin Dashboard to allow Administrator accounts to delete locations from the database. (currently this can be accomplished using Postman to send a DELETE request)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Luckily all these things are fairly easy to implement, as this app is pretty modular and scaleable. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Despite all the stress, this was a ton of fun to work on and we hope it showcases our love of the craft. As a learning experience, this was REALLY something!
 
-### `npm run eject`
+# Check it Out!
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Lorem ipsum screenshot sit amet
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Setup
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 1. Clone Project from GitHub
 
-## Learn More
+Copy the SSH link from the project and run `git clone` from whatever directory you wanna clone into.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 2. Install all dependencies:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+npm i
+```
 
-### Code Splitting
+## 3. Set your Google Maps API key inside the environmental variable.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Get a Maps Javascript API Key, and create a .env containing the following:
 
-### Analyzing the Bundle Size
+```sh
+REACT_APP_GOOGLE_MAPS_API_KEY="{YOUR KEY HERE}" 
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 4. Populate the database. 
 
-### Making a Progressive Web App
+From inside the server directory:
+```sh
+psql -d gottago -U development
+```
+When prompted for a password, use `development`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Initialize the database and seed accordingly with provided files. Ensure that you are in the correct database in psql, and then run the following, one at a time, in order: 
+```sh
+\i schema/database.sql
+\i seeds/01_users.sql
+\i seeds/02_locations.sql
+\i seeds/03_reviews.sql
+```
 
-### Advanced Configuration
+## 5. Start the Development Server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+From the root project directory:
+```sh
+npm run server
+```
 
-### Deployment
+## 6. Start the App:
+From the Root project directory:
+```sh
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 7. Play Around With it!
 
-### `npm run build` fails to minify
+- Enable location in your browser to use GeoLocation. This should work in most modern browsers, tested in Chrome and Firefox.
+- Login! Example users are seeded to the database already, but you can register your own if it's comfier.
+- Add a location to the database! You can get Latitude and Longitude values by right clicking on a location in google maps, and copying the returned Lat/Long values. We're working on adding a nicer way to do this with just an address, but this is now a spare-time project so don't expect too much now!
+- Add a review! Cuz why not!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
