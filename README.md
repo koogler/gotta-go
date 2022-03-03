@@ -31,8 +31,11 @@ Despite all the stress, this was a ton of fun to work on and we hope it showcase
 
 # Check it Out!
 
-Lorem ipsum screenshot sit amet
+Filtering locations updates both rendered map markers AND sidebar details:
+!["Filtering Locations"](https://raw.githubusercontent.com/koogler/gotta-go/master/docs/filtering.gif)
 
+Geolocation works at the click of a button, if browser location fetching is enabled:
+!["Geolocation Demonstration"](https://raw.githubusercontent.com/koogler/gotta-go/master/docs/geolocation.gif)
 
 # Setup
 
